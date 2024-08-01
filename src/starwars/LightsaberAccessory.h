@@ -3,7 +3,7 @@
 
 #pragma once
 
-#include <starwars/Accessory.h>
+#include <starwars/starwars.h>
 
 namespace StarWars {
 

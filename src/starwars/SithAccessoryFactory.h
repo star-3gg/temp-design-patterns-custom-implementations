@@ -1,14 +1,13 @@
-#ifndef STARWARS_JEDI_ACCESSORY_FACTORY_H
-#define STARWARS_JEDI_ACCESSORY_FACTORY_H
+#ifndef STARWARS_SITH_ACCESSORY_FACTORY_H
+#define STARWARS_SITH_ACCESSORY_FACTORY_H
 
 #include <memory>
-#include <starwars/Accessory.h>
-#include <starwars/AccessoryFactory.h>
+#include <starwars/starwars.h>
 
 namespace StarWars {
 
 // INFO: Concrete factory class
-class JediAccessoryFactory : public AccessoryFactory {
+class SithAccessoryFactory : public AccessoryFactory {
 public:
   std::unique_ptr<Accessory> createLightsaber() const override;
   std::unique_ptr<Accessory> createEyes() const override;
@@ -17,4 +16,4 @@ public:
 
 } // namespace StarWars
 
-#endif // STARWARS_JEDI_ACCESSORY_FACTORY_H
+#endif // STARWARS_SITH_ACCESSORY_FACTORY_H

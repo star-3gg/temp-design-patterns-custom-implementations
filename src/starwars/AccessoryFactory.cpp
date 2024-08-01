@@ -1,6 +1,5 @@
 // Cherno smart pointers: https://www.youtube.com/watch?v=UOB7-B2MfwA
-#include <memory>
-#include <starwars/AccessoryFactory.h>
+#include <starwars/starwars.h>
 
 namespace StarWars {
 

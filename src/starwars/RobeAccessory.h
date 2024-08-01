@@ -1,15 +1,15 @@
-#ifndef STARWARS_EYES_ACCESSORY_H
-#define STARWARS_EYES_ACCESSORY_H
+#ifndef STARWARS_ROBE_ACCESSORY_H
+#define STARWARS_ROBE_ACCESSORY_H
 
 #pragma once
 
-#include <starwars/Accessory.h>
+#include <starwars/starwars.h>
 
 namespace StarWars {
 
-class EyesAccessory : public Accessory { // concrete
+class RobeAccessory : public Accessory { // concrete
 public:
-  EyesAccessory(string name, Atunement atunement)
+  RobeAccessory(string name, Atunement atunement)
       : Accessory(name, atunement) {}
 
   string getName() const override { return name; }
@@ -18,4 +18,4 @@ public:
 };
 } // namespace StarWars
 
-#endif // STARWARS_EYES_ACCESSORY_H
+#endif // STARWARS_ROBE_ACCESSORY_H

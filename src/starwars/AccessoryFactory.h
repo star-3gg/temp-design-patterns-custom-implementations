@@ -6,7 +6,7 @@
 #define STARWARS_ACCESSORY_FACTORY_H
 
 #include <memory>
-#include <starwars/Accessory.h>
+#include <starwars/starwars.h>
 
 namespace StarWars {
 

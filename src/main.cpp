@@ -6,14 +6,11 @@
 // ColumnLimit: 120
 // BreakBeforeBraces: Linux
 
-#include <ios>                         // basic io stream classes
-#include <iostream>                    // io stuff
-#include <limits>                      // input validation
-#include <memory>                      // smart pointer stuff
-#include <starwars/AccessoryFactory.h> // factory
-#include <starwars/JediAccessoryFactory.h>
-#include <starwars/SithAccessoryFactory.h>
-
+#include <ios>      // basic io stream classes
+#include <iostream> // io stuff
+#include <limits>   // input validation
+#include <memory>   // smart pointer stuff
+#include <starwars/starwars.h>
 int menu() {
   // INFO: Google guidelines on 'using' declarations within source files:
   // - Prefer fully qualifying names.

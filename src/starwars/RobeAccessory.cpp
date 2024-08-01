@@ -1,5 +1,5 @@
 #include <iostream>
-#include <starwars/RobeAccessory.h>
+#include <starwars/starwars.h>
 
 namespace StarWars {
 

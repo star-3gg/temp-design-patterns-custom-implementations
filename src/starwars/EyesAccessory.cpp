@@ -1,5 +1,5 @@
 #include <iostream>
-#include <starwars/EyesAccessory.h>
+#include <starwars/starwars.h>
 
 namespace StarWars {
 

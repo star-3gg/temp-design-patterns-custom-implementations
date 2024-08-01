@@ -1,6 +1,6 @@
 
 #include <iostream>
-#include <starwars/LightsaberAccessory.h>
+#include <starwars/starwars.h>
 
 namespace StarWars {
 
