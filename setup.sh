@@ -1,11 +1,18 @@
 #!/bin/sh
 
-# INFO: Build the project
-cmake -B build -S .
-make -C build
+# INFO: Build with ASAN for fast memory analysis
+# INFO: Build the project with ASAN
+cmake -B build -DENABLE_ASAN=ON
+cmake --build build
 
 # INFO: Execute bult binaries
-valgrind --leak-check=full ./build/src/StarWars
+./build/src/StarWars
 
-# INFO: Attach to running container using compose
-#podman-compose run --rm star_wars bash
+# INFO: Build with valgrind for slower but deeper memory analysis, Might catch things that ASAN won't
+# INFO: Build the project without ASAN
+# rm -rdf build
+cmake -B build -DENABLE_ASAN=OFF
+cmake --build build
+
+# INFO: Execute bult binaries with valgrind
+valgrind --leak-check=full -s ./build/src/StarWars

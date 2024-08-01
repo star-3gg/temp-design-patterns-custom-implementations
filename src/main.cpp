@@ -55,6 +55,9 @@ void handleJediSelection() {
   std::unique_ptr<StarWars::Accessory> jediLightsaber(
       jediFactory->createLightsaber());
   jediLightsaber->showInfo();
+  // Memory leak
+  int *q = new int;
+  // no delete
 }
 
 // INFO: Creates a sith object using an instance of the sith factory class and
