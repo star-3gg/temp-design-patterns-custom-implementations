@@ -1,9 +1,8 @@
 #ifndef STARWARS_LIGHTSABER_ACCESSORY_H
 #define STARWARS_LIGHTSABER_ACCESSORY_H
 
+#include "Accessory.h"
 #pragma once
-
-#include <starwars/starwars.h>
 
 namespace StarWars {
 

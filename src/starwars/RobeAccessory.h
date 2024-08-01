@@ -1,9 +1,8 @@
 #ifndef STARWARS_ROBE_ACCESSORY_H
 #define STARWARS_ROBE_ACCESSORY_H
 
+#include "Accessory.h"
 #pragma once
-
-#include <starwars/starwars.h>
 
 namespace StarWars {
 

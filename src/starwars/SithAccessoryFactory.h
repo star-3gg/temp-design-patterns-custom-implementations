@@ -1,8 +1,9 @@
 #ifndef STARWARS_SITH_ACCESSORY_FACTORY_H
 #define STARWARS_SITH_ACCESSORY_FACTORY_H
 
+#include "Accessory.h"
+#include "AccessoryFactory.h"
 #include <memory>
-#include <starwars/starwars.h>
 
 namespace StarWars {
 

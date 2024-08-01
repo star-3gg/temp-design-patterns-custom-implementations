@@ -5,8 +5,10 @@
 #ifndef STARWARS_ACCESSORY_FACTORY_H
 #define STARWARS_ACCESSORY_FACTORY_H
 
+#include "Accessory.h"
+#pragma once
+
 #include <memory>
-#include <starwars/starwars.h>
 
 namespace StarWars {
 

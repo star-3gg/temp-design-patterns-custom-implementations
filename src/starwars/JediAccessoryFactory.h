@@ -1,8 +1,10 @@
 #ifndef STARWARS_JEDI_ACCESSORY_FACTORY_H
 #define STARWARS_JEDI_ACCESSORY_FACTORY_H
 
+#pragma once
+
+#include "AccessoryFactory.h"
 #include <memory>
-#include <starwars/starwars.h>
 
 namespace StarWars {
 
