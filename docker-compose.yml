@@ -4,9 +4,16 @@ services:
     build:
       context: ./dockerfiles/
       dockerfile: archlinux-btr.Dockerfile
+    environment:
+      DEBUGINFOD_URLS: "https://debuginfod.archlinux.org" # Fix valgrind error
     volumes:
       - .:/app
       - /app/build
     working_dir: /app
     command: ./setup.sh
+    # command: /bin/sh
     stop_grace_period: 10ms
+    # INFO: Enable interactive terminal. It works,
+    # just start typing and it will be received by the application
+    stdin_open: true # docker run -i
+    tty: true # docker run -t

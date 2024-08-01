@@ -1,3 +1,3 @@
 FROM archlinux:latest
 
-RUN pacman -Sy cmake valgrind base-devel gtest --noconfirm
+RUN pacman -Sy gdb cmake glibc valgrind debuginfod base-devel gtest --noconfirm
