@@ -1,0 +1,12 @@
+services:
+  star_wars:
+    # container_name: star-wars
+    build:
+      context: ./dockerfiles/
+      dockerfile: archlinux-btr.Dockerfile
+    volumes:
+      - .:/app
+      - /app/build
+    working_dir: /app
+    command: ./setup.sh
+    stop_grace_period: 10ms
