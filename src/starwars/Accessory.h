@@ -1,5 +1,3 @@
-// TODO: Split into multiple header files
-
 // INFO: Include guard, similar to #pragma once but
 // more descriptive. also prevents header name
 // collissions. custom header guards like this one
