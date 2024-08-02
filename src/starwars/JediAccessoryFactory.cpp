@@ -9,7 +9,7 @@ std::unique_ptr<Accessory> JediAccessoryFactory::createLightsaber() const {
 }
 
 std::unique_ptr<Accessory> JediAccessoryFactory::createEyes() const {
-  return std::make_unique<EyesAccessory>("Jedi Eye", LIGHT_SIDE);
+  return std::make_unique<EyesAccessory>("Jedi Eyes", LIGHT_SIDE);
 }
 
 std::unique_ptr<Accessory> JediAccessoryFactory::createRobe() const {
