@@ -6,13 +6,14 @@
 // ColumnLimit: 120
 // BreakBeforeBraces: Linux
 
+#include "starwars/Accessory.h"
 #include <ios>      // basic io stream classes
 #include <iostream> // io stuff
 #include <limits>   // input validation
 #include <memory>   // smart pointer stuff
 #include <starwars/starwars.h>
 
-int menu() {
+int classMenu() {
   // INFO: Google guidelines on 'using' declarations within source files:
   // - Prefer fully qualifying names.
   // - acceptable within function bodies to avoid verbosity.
@@ -46,28 +47,33 @@ int menu() {
   }
 }
 
+// TODO: implement name selection dialog
+std::string nameMenu() { return ""; }
+
 // INFO: Creates a jedi object using an instance of the jedi factory class and
 // uses non-shared smart pointers for automatic deallocation
-void handleJediSelection() {
+void handleJediSelection(std::string name) {
   // INFO: Polymorphism through base class pointers
-  std::unique_ptr<StarWars::AccessoryFactory> jediFactory =
-      std::make_unique<StarWars::JediAccessoryFactory>();
-  std::unique_ptr<StarWars::Accessory> jediLightsaber(
-      jediFactory->createLightsaber());
-  jediLightsaber->showInfo();
-  // Memory leak
-  int *q = new int;
-  // no delete
+  std::unique_ptr<StarWars::ForceUserFactory> forceUserFactory =
+      std::make_unique<StarWars::ForceUserFactory>();
+  std::unique_ptr<StarWars::ForceUser> forceUser =
+      forceUserFactory->createForceUser(name, StarWars::LIGHT_SIDE);
+  forceUser->listEquipment();
+
+  //     // Memory leak detection test
+  //     int *q = new int;
+  // // no delete
 }
 
 // INFO: Creates a sith object using an instance of the sith factory class and
 // uses non-shared smart pointers for automatic deallocation
-void handleSithSelection() {
-  std::unique_ptr<StarWars::AccessoryFactory> sithFactory =
-      std::make_unique<StarWars::SithAccessoryFactory>();
-  std::unique_ptr<StarWars::Accessory> sithLightsaber(
-      sithFactory->createLightsaber());
-  sithLightsaber->showInfo();
+void handleSithSelection(std::string name) {
+  // INFO: Polymorphism through base class pointers
+  std::unique_ptr<StarWars::ForceUserFactory> forceUserFactory =
+      std::make_unique<StarWars::ForceUserFactory>();
+  std::unique_ptr<StarWars::ForceUser> forceUser =
+      forceUserFactory->createForceUser(name, StarWars::DARK_SIDE);
+  forceUser->listEquipment();
 }
 
 int main(int argc, char *argv[]) {
@@ -76,7 +82,7 @@ int main(int argc, char *argv[]) {
 
   // INFO: Main program prompt loop
   while (!exit) {
-    int selection = menu();
+    int selection = classMenu();
 
     // INFO: Check if the selection matches an option number
     switch (selection) {
@@ -84,10 +90,10 @@ int main(int argc, char *argv[]) {
       exit = true;
       break;
     case 1:
-      handleJediSelection();
+      handleJediSelection("Grandmaster Yoda");
       break;
     case 2:
-      handleSithSelection();
+      handleSithSelection("Emperor Palpatine");
       break;
     default:
       std::cout << "Invalid selection! Please select a valid option."
