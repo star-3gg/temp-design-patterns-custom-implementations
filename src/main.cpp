@@ -6,12 +6,11 @@
 // ColumnLimit: 120
 // BreakBeforeBraces: Linux
 
-#include "starwars/Accessory.h"
-#include <ios>      // basic io stream classes
-#include <iostream> // io stuff
-#include <limits>   // input validation
-#include <memory>   // smart pointer stuff
-#include <starwars/starwars.h>
+#include <ios>                 // basic io stream classes
+#include <iostream>            // io stuff
+#include <limits>              // input validation
+#include <memory>              // smart pointer stuff
+#include <starwars/starwars.h> // custom star wars library
 
 int classMenu() {
   // INFO: Google guidelines on 'using' declarations within source files:
