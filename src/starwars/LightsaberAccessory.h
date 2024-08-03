@@ -8,7 +8,7 @@ namespace StarWars {
 
 class LightsaberAccessory : public Accessory { // concrete
 public:
-  LightsaberAccessory(std::string name, Atunement atunement)
+  LightsaberAccessory(std::string const name, Atunement const atunement)
       : Accessory(name, atunement) {}
 
   std::string getName() const override {

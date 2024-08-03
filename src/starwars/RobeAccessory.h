@@ -8,10 +8,10 @@ namespace StarWars {
 
 class RobeAccessory : public Accessory { // concrete
 public:
-  RobeAccessory(string name, Atunement atunement)
+  RobeAccessory(std::string const name, Atunement const atunement)
       : Accessory(name, atunement) {}
 
-  string getName() const override { return name; }
+  std::string getName() const override { return name; }
   Atunement getAtunement() const override { return atunement; }
   void showInfo() const override;
 };

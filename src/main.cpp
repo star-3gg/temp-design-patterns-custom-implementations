@@ -53,24 +53,20 @@ std::string nameMenu() { return ""; }
 // uses non-shared smart pointers for automatic deallocation
 void handleJediSelection(std::string name) {
   // INFO: Polymorphism through base class pointers
-  std::unique_ptr<StarWars::ForceUserFactory> forceUserFactory =
+  std::unique_ptr<StarWars::ForceUserFactory> const forceUserFactory =
       std::make_unique<StarWars::ForceUserFactory>();
-  std::unique_ptr<StarWars::ForceUser> forceUser =
+  std::unique_ptr<StarWars::ForceUser> const forceUser =
       forceUserFactory->createForceUser(name, StarWars::LIGHT_SIDE);
   forceUser->listEquipment();
-
-  //     // Memory leak detection test
-  //     int *q = new int;
-  // // no delete
 }
 
 // INFO: Creates a sith object using an instance of the sith factory class and
 // uses non-shared smart pointers for automatic deallocation
 void handleSithSelection(std::string name) {
   // INFO: Polymorphism through base class pointers
-  std::unique_ptr<StarWars::ForceUserFactory> forceUserFactory =
+  std::unique_ptr<StarWars::ForceUserFactory> const forceUserFactory =
       std::make_unique<StarWars::ForceUserFactory>();
-  std::unique_ptr<StarWars::ForceUser> forceUser =
+  std::unique_ptr<StarWars::ForceUser> const forceUser =
       forceUserFactory->createForceUser(name, StarWars::DARK_SIDE);
   forceUser->listEquipment();
 }
@@ -81,7 +77,7 @@ int main(int argc, char *argv[]) {
 
   // INFO: Main program prompt loop
   while (!exit) {
-    int selection = classMenu();
+    int const selection = classMenu();
 
     // INFO: Check if the selection matches an option number
     switch (selection) {
