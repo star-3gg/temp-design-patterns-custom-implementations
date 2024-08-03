@@ -5,7 +5,7 @@
 ...A desperate developer was learning about creational patterns.
 Guided by the notes of ancient UML master slashers he relentlessly wrote leet code until he was done.
 
-### Smart Pointers, Pure Virtual Functions & Abstact Classes, Modern C++
+### Smart Pointers, Pure Virtual Functions & Abstract Classes, Modern C++
 This developer was guided by the force. 🙏
 
 ### Gtests coming 🙉
