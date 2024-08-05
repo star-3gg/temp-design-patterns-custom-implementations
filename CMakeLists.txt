@@ -5,6 +5,10 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_CXX_STANDARD 23)
 project("StarWars" CXX)
 
+# INFO: Enable bounds checking.
+# std::vector provides built-in bounds checking (already refactored)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=bounds -g")
+
 # INFO: Switch for ASAN, set with -DENABLE_ASAN=ON
 option(ENABLE_ASAN "Enable AddressSanitizer" OFF)
 
@@ -17,9 +21,32 @@ if(ENABLE_ASAN)
   # target_compile_options(target PRIVATE -fsanitize=address)
   # target_link_options(target PRIVATE -fsanitize=address)
 else()
-  # Enable debug information
+  # INFO: Enable debug information
   add_compile_options(-g)
 endif()
+
+
+# INFO: Strict compiler flags for improved error handling and warnings as errors
+# WARN: Will only be enabled for GCC or clangd
+if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
+  add_compile_options(
+    -Wall
+    -Wextra
+    -Werror
+    -pedantic
+    -pedantic-errors
+    -Wshadow
+    -Wnon-virtual-dtor
+    -Wold-style-cast
+    -Woverloaded-virtual
+    -Wconversion
+    -Wsign-conversion
+    -Wnull-dereference
+    -Wdouble-promotion
+  )
+endif()
+
+# TODO: Enable tests. E.g. Gtext or Ctest https://cmake.org/cmake/help/book/mastering-cmake/chapter/Testing%20With%20CMake%20and%20CTest.html
 
 include_directories(${CMAKE_SOURCE_DIR}/include)
 
