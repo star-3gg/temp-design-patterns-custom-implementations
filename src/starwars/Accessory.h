@@ -19,8 +19,7 @@ enum Atunement { DARK_SIDE, LIGHT_SIDE };
 
 class Accessory { // abstract
 public:
-  Accessory(std::string const name, Atunement const atunement)
-      : name(name), atunement(atunement) {}
+  Accessory(std::string const n, Atunement const a) : name(n), atunement(a) {}
 
   // INFO: Pure virtual member functions. Remember: pure virtual functions must
   // be overriden by concrete class.

@@ -2,7 +2,7 @@
 // something like:
 // IndentWidth: 4
 // TabWidth: 4
-// UseTab: Always
+// UseTab: Always // WARN: Don't use tabs
 // ColumnLimit: 120
 // BreakBeforeBraces: Linux
 
@@ -71,7 +71,7 @@ void handleSithSelection(std::string name) {
   forceUser->listEquipment();
 }
 
-int main(int argc, char *argv[]) {
+int main() {
   // INFO: Whether or not to exit the prompt loop
   bool exit = false;
 
